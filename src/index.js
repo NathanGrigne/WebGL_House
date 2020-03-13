@@ -61,12 +61,12 @@ door.position.y = -0.25
 */
 
 const ground = new THREE.Mesh(
-    new THREE.SphereGeometry(25, 80, 80, 0, Math.PI),
+    new THREE.SphereGeometry(25, 8, 6, 0, Math.PI * 2, 0, 0.6),
     new THREE.MeshBasicMaterial({ color: 0x7EC850 })
 )
 
 houseGroup.add(ground)
-ground.rotation.x = - 1.57
+ground.rotation.x = Math.PI * 2
 ground.position.y = - 26
 
 /*
