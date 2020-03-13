@@ -49,19 +49,50 @@ houseGroup.add(walls)
 */
 
 const door = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 2, 0.1),
+    new THREE.BoxGeometry(1, 2, 0.05),
     new THREE.MeshBasicMaterial({ color: 0x6e3300 })
 )
 houseGroup.add(door)
-door.position.z = 2.55
+door.position.z = 2.5
 door.position.y = -0.25
+
+/*
+    Garage
+*/
+
+const garageGroup = new THREE.Group()
+houseGroup.add(garageGroup)
+garageGroup.position.x = - 3.8
+garageGroup.position.y = - 0.5
+garageGroup.rotation.z = 0.15
+
+const garage = new THREE.Mesh(
+    new THREE.BoxGeometry(3, 2.5, 4),
+    new THREE.MeshBasicMaterial({ color: 0xffcc99 })
+)
+garageGroup.add(garage)
+
+const roofGarage = new THREE.Mesh(
+    new THREE.ConeGeometry(3.3, 2.5, 4),
+    new THREE.MeshBasicMaterial({ color: 0xdc5539 })
+)
+garageGroup.add(roofGarage)
+roofGarage.rotation.y = 0.785
+roofGarage.position.y = 2.5
+roofGarage.position.x = 0.6
+
+const doorGarage = new THREE.Mesh(
+    new THREE.BoxGeometry(2.3, 2, 0.05),
+    new THREE.MeshBasicMaterial({ color: 0x9C9C9C })
+)
+garageGroup.add(doorGarage)
+doorGarage.position.z = 2
 
 /*
     Ground
 */
-
 const ground = new THREE.Mesh(
-    new THREE.SphereGeometry(25, 8, 6, 0, Math.PI * 2, 0, 0.6),
+    new THREE.SphereGeometry(25, 20, 6, 0, Math.PI * 2, 0, 0.6),
     new THREE.MeshBasicMaterial({ color: 0x7EC850 })
 )
 
